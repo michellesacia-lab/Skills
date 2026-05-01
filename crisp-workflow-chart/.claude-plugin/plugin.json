@@ -1,0 +1,9 @@
+{
+  "name": "crisp-workflow-chart",
+  "description": "Rebuilds the Crisp AI Workflow Chart PPTX (Claude & AI Workflow — Standard Engagement v2) from the build_slide.py script",
+  "author": {
+    "name": "Crisp Consulting",
+    "email": "michelle.sacia@gocrisp.com"
+  },
+  "version": "1.0.0"
+}
