@@ -1,6 +1,6 @@
 ---
 name: build-workflow-chart
-description: This skill should be used when the user asks to "rebuild the workflow chart", "regenerate the PPTX", "update the workflow chart", "build the Crisp workflow", or mentions changes to "Workflow_Chart_v2" or "Workflow_Chart_v3". It rebuilds the Crisp AI Workflow PowerPoint slide from the build_slide.py script.
+description: This skill should be used when the user asks to "rebuild the workflow chart", "regenerate the PPTX", "update the workflow chart", or "build the engagement workflow slide". It rebuilds the Claude & AI Workflow PowerPoint slide from the build_slide.py script.
 allowed-tools: [Read, Edit, Bash, PowerShell, Glob]
 ---
 
@@ -13,24 +13,23 @@ Rebuild the **Claude & AI Workflow — Standard Engagement** PowerPoint slide.
 | File | Purpose |
 |---|---|
 | `Claude Output/build_slide.py` | Master build script — edit this to make changes |
-| `Claude Output/Workflow_Chart_v3.pptx` | Current output file |
-| `docs/superpowers/specs/2026-05-01-workflow-chart-design.md` | Design spec (colors, layout, section details) |
+| `Claude Output/Workflow_Chart.pptx` | Output file |
+| `docs/superpowers/specs/workflow-chart-design.md` | Design spec (colors, layout, section details) |
 
-All paths are relative to:
-`C:\Users\MSacia\OneDrive - cantactix.com\Desktop\AI\Professional Services Opportunity Log-BRD-SDD\`
+All paths are relative to the project root. Locate the project root by finding the directory that contains the `Claude Output/` folder.
 
 ## How to Run
 
 ```powershell
-cd "C:\Users\MSacia\OneDrive - cantactix.com\Desktop\AI\Professional Services Opportunity Log-BRD-SDD\Claude Output"
+cd "<project-root>\Claude Output"
 py build_slide.py
 ```
 
 Expected output:
 ```
-Legend bottom: 5.310 inches (slide height: 7.5 inches)
-Saved: Workflow_Chart_v3.pptx
-File size: 33492 bytes
+Legend bottom: X.XXX inches (slide height: 7.5 inches)
+Saved: Workflow_Chart.pptx
+File size: XXXXX bytes
 ```
 
 If you get `PermissionError`, the file is open in PowerPoint — close it first, then re-run.
@@ -50,7 +49,7 @@ The `phases` list (around line 115) controls each card:
     "num": "[4]", "name": "Implementation",
     "role": "Tech Architect",
     "detail": "Scripts, UAT Scenarios\nCode Review",
-    "ai": "AI: PowerShell scripts,\nUAT creation (Arcade)",
+    "ai": "AI: PowerShell scripts,\nUAT creation (<tool-name>)",
 },
 ```
 
@@ -101,5 +100,5 @@ Legend row
 
 - Width: 13.33" — Height: 7.5" (widescreen 16:9)
 - Margin: 0.25" on each side
-- All content ends before 5.5" (plenty of bottom margin)
+- All content ends well within the slide height
 - Font: Arial throughout
