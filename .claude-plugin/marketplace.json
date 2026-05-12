@@ -1,13 +1,23 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "michellesacia-lab",
   "displayName": "Crisp Consulting Skills",
   "description": "Internal skills and plugins for Crisp Consulting engagements",
-  "author": {
-    "name": "Crisp Consulting"
+  "owner": {
+    "name": "Crisp Consulting",
+    "url": "https://github.com/michellesacia-lab"
   },
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/michellesacia-lab/Skills.git"
-  }
+  "plugins": [
+    {
+      "name": "crisp-bc-workflow-chart",
+      "version": "1.0.0",
+      "description": "Rebuilds the Claude & AI Workflow — Standard Engagement PowerPoint slide from the build_slide.py script",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/michellesacia-lab/Skills",
+        "path": "plugins/crisp-bc-workflow-chart"
+      },
+      "homepage": "https://github.com/michellesacia-lab/Skills"
+    }
+  ]
 }
